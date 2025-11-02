@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family:sty;
+    src: url(./NeueMachina-Bold_WaMOsLX9Z9.ttf);
+}
+body{
+    display: flex;
+    width: 100%;
+    height:100vh;
+    // background: linear-gradient(135deg, #f7971e, #ffd200, #f44336, #1e3c72);
+    background-color: #1e3c72;
+    align-items: center;
+    justify-content: center;
+}
+main{
+    background: linear-gradient(135deg, #f7971e, #ffd200, #f44336, #1e3c72);
+    // width: 60%;
+    border-radius: 10px;
+    padding: 20px 20px;
+    display: flex;
+    gap:20px;
+    margin-top:30px ;
+    .left{
+       display: flex;
+       flex-direction: column;
+       gap:20px;
+
+        img{
+            border-radius: 20px;
+            width:16rem;
+            height:20rem;
+            border: 0.5px solid white;
+            object-fit:cover;
+            background-position:center;
+        }
+        .music-player{
+            // border: 2px solid white;
+            border: 0.5px solid white;
+            background: rgba(56, 88, 151, 0.6); backdrop-filter: blur(14px); border: 2px solid #6cbbdc;
+
+            border-radius: 20px;
+            display: flex;
+            gap: 30px;
+            padding: 16px 0px;
+           align-items: center;
+           justify-content: center;
+            h3{
+                padding:5px;
+                // border: 2px solid white;
+                border: 0.5px solid white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color:#00c6ff;
+                box-shadow: 0 4px 32px 0 #00d2ff66;
+                i{
+                    color: white;
+                    &:hover {
+                        filter: drop-shadow(0 0 12px #00c6ff);
+                    }
+                    &:active{
+                        scale: 0.9;
+                    }
+                }
+               
+
+            }
+        }
+    }
+    .right{
+        .music-container{
+            padding: 10px 5px;
+            background: rgba(166, 172, 185, 0.6); backdrop-filter: blur(14px); border: 2px solid #6cbbdc;
+           border: 0.5px solid white;
+            // box-shadow: 0 4px 10px rgba(0, 0, 255, 0.5);
+            border-radius:20px;
+            max-height:80vh;   
+            min-height:80vh;
+            overflow-y: auto;
+            display:flex;
+            flex-direction: column;
+            gap:15px;
+            scrollbar-width: none; /* Firefox */
+
+            .music-box{
+                display: flex;
+                // border: 2px solid blue;
+                padding: 10px 10px;
+                gap:15px;
+                border-radius: 10px;
+                align-items: center;
+                &:hover{
+                    cursor: pointer;
+                    background-color: #6e5858;
+                    
+                }
+                &:active{
+                    scale: 0.99;
+                }
+                .part1{
+                    display: flex;
+                    gap: 10px;
+                    pointer-events: none;
+                    align-items: center;
+                    img{
+                        // width:;
+                        width:60px;
+                        height:80px;
+                        border-radius:5px;
+                        object-fit: cover;
+                        border:0.5px solid white ;
+                    }
+                    h6{
+                        font-size: 2vw;
+                        font-family: sty;
+                        color:white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:600px){
+   
+    main{
+        flex-direction: column;
+        width: 100%;
+        padding: 60px 30px;
+        margin-top: 0;
+      
+        .left{
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 90vw;
+              
+            }
+            .music-player{
+                padding: 10px 30px;
+            }
+        }
+        .right{
+            .music-container{
+                min-height: 50vw;
+                max-height: 90vw;
+
+                .music-box{
+                    gap: 20px;
+                      .part1{
+
+                        img{
+                            width: 20vw;
+                        }
+                        h6{
+                            font-size: 5vw;
+                        }
+                      }
+                }
+            }
+        }
+        
+    }
+}
